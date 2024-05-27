@@ -27,7 +27,7 @@ export default function SignUp({ navigation }) {
     };
 
     return (
-        <ImageBackground source={require('./assets/back2.png')} style={styles.container}>
+        <ImageBackground source={require('../../assets/back.webp')} style={styles.container}>
     <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'center' }}>
         <Text style={{ color: '#00FFFF', fontSize: 30, fontWeight: '500' }}>SIGN UP</Text>
         {/* <Text style={{ color: '#2ECC71', fontSize: 30, fontWeight: '800' }}>&</Text> */}

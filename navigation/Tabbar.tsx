@@ -13,6 +13,8 @@ import Settings from "./screens/Settings";
 import RecentSearch from './screens/RecentSearch';
 import SectionDetail from './screens/SectionDetail';
 import SkillScreen from './screens/SkillScreen';
+import SignIn from './screens/SignIn';
+import SignUp from './screens/SignUp';
 
 export type RootStackParamList = {
   HomeStack: undefined;
@@ -20,11 +22,15 @@ export type RootStackParamList = {
   RecentSearch: { searchPhrase: string };
   SectionDetail: { sectionName: string };
   SkillScreen: { link: string };
+  SignIn:undefined;
+  SignUp:undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
+const SignInName = "SignIn";
+const SignUpName = "SignUp";
 const RecentSearchName = "RecentSearch";
 const SectionDetailName = "SectionDetail";
 const homeName = "Home";
@@ -85,6 +91,8 @@ export default function Tabbar(){
       
         <NavigationContainer>
           <Stack.Navigator>
+            <Stack.Screen name={SignInName} component={SignIn} options={{ headerShown: false}}/>
+            <Stack.Screen name={SignUpName} component={SignUp} options={{ headerShown: false }}/>
             <Stack.Screen name={'HomeStack'} component={HomeStack} options={{ headerShown: false ,animation: 'none'}} />
             <Stack.Screen name={RecentSearchName} component={RecentSearch} options={{ headerShown: false ,animation: 'none' }}/>
             <Stack.Screen name={SectionDetailName} component={SectionDetail} options={{ headerShown: true,headerStyle: {

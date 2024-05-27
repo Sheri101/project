@@ -35,7 +35,7 @@ export default function SignIn({ navigation }) {
                 }
                 else{
                     console.log("regular")
-                    navigation.replace('Home')
+                    navigation.replace('HomeStack')
         
                 }
                 
@@ -75,7 +75,7 @@ export default function SignIn({ navigation }) {
     // };
 
     return (
-        <ImageBackground source={require('./assets/back2.png')} style={styles.container}>
+        <ImageBackground source={require('../../assets/back.webp')} style={styles.container}>
             <View style = {{alignItems:'center',justifyContent:'center' }}>
             <Text style = {{color:'#00FFFF',fontSize:25 ,marginTop: -180}} > Welcome Back! </Text>
             </View>

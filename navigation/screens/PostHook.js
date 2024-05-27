@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Alert } from 'react-native';
 
 
-
-
 export default function PostHook() {
 const [signIn, setsignIn] = useState(false)
 const [signUp, setSignUp] = useState(false)

@@ -13,9 +13,6 @@ import {getAuth} from 'firebase/auth';
 
 
 
-
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyDSCFsGCVw_j1iklcAZ3NJ2TKEY6v6rbuk",
   authDomain: "mobeen-dfd9b.firebaseapp.com",
