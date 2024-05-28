@@ -9,13 +9,20 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Profile from "./screens/Profile";
 import Home from "./screens/Home";
 import Home1 from "./screens/Home1";
-import Settings from "./screens/Settings";
+import Settings from "./screens/SettingsTest";
 import RecentSearch from './screens/RecentSearch';
 import SectionDetail from './screens/SectionDetail';
 import SkillScreen from './screens/SkillScreen';
 import SignIn from './screens/SignIn';
 import SignUp from './screens/SignUp';
 import LogoScreen from './screens/LogoScreen';
+import SettingsScreen from './screens/SettingsScreen';
+import SetWeeklyRemindersScreen from './screens/SetWeeklyRemindersScreen';
+import SubscriptionScreen from './screens/SubscriptionScreen';
+import ContactSupportScreen from './screens/ContactSupportScreen';
+import TermsOfService from './screens/TermsOfService';
+import PrivacyPolicyScreen from './screens/PrivacypolicyScreen';
+import RulesAndRegulations from './screens/RulesandRegulationsScreen';
 
 export type RootStackParamList = {
   HomeStack: undefined;
@@ -26,6 +33,14 @@ export type RootStackParamList = {
   SignIn:undefined;
   SignUp:undefined;
   LogoScreen:undefined;
+  Settings:undefined;
+  SetWeeklyRemindersScreen:undefined;
+  SubscriptionScreen:undefined;
+  ContactSupportScreen:undefined;
+  TermsOfService:undefined;
+  PrivacypolicyScreen:undefined;
+  RulesandRegulationsScreen:undefined;
+  SettingsStack:undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -41,6 +56,8 @@ const settingsName = "Settings";
 const SkillScreenName = 'SkillScreen';
 const homeName1 = "Home1"
 const LogoScreenName = "LogoScreen"
+
+
 
 const HomeStack = () => (
   <Tab.Navigator
@@ -70,7 +87,7 @@ const HomeStack = () => (
                     iconName = focused ? 'person-circle' : 'person-circle-outline';
                     size = 27;
         
-                    } else if (rn === settingsName) {
+                    } else if (rn === "Settings") {
                     iconName = focused ? 'settings' : 'settings-outline';
                     }
         
@@ -83,9 +100,21 @@ const HomeStack = () => (
             {/* <Tab.Screen name={homeName} component={Home} options={{headerShown:false}}/> */}
             <Tab.Screen name={homeName1} component={Home1} options={{headerShown:false}}/>
             <Tab.Screen name={ProfileName} component={Profile} options={{headerShown:false}}/>
-            <Tab.Screen name={settingsName} component={Settings} options={{headerShown:false}}/>
+            <Tab.Screen name={"Settings"} component={SettingsScreen} options={{headerShown:true}}/>
+            {/* <Tab.Screen name={settingsName} component={Settings} options={{headerShown:false}}/> */}
     
           </Tab.Navigator>
+);
+
+const SettingsStackScreen =() =>(
+  <Stack.Navigator>
+        <Stack.Screen name="SetWeeklyRemindersScreen" component={SetWeeklyRemindersScreen} />
+        <Stack.Screen name="SubscriptionScreen" component={SubscriptionScreen} />
+        <Stack.Screen name="ContactSupportScreen" component={ContactSupportScreen} />
+        <Stack.Screen name="TermsOfService" component={TermsOfService} />
+        <Stack.Screen name="PrivacypolicyScreen" component={PrivacyPolicyScreen} />
+        <Stack.Screen name="RulesandRegulationsScreen" component={RulesAndRegulations} />
+      </Stack.Navigator>
 );
 
 export default function Tabbar(){
@@ -114,6 +143,7 @@ export default function Tabbar(){
               headerTitleStyle: {
                 fontWeight: 'bold',
               },}}/>
+            <Stack.Screen name={'SettingsStack'} component={SettingsStackScreen} options={{ headerShown: false ,animation: 'none'}} />
           </Stack.Navigator>
         </NavigationContainer>
        

@@ -6,7 +6,7 @@ export default function LogoScreen({ navigation }) {
     const timeout = setTimeout(() => {
       // Navigate to the next screen after 2 seconds
       navigation.replace('SignIn');
-    }, 5000); // 1 second delay
+    }, 1000); // 1 second delay
 
     return () => clearTimeout(timeout);
   }, []);
