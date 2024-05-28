@@ -15,6 +15,7 @@ import SectionDetail from './screens/SectionDetail';
 import SkillScreen from './screens/SkillScreen';
 import SignIn from './screens/SignIn';
 import SignUp from './screens/SignUp';
+import LogoScreen from './screens/LogoScreen';
 
 export type RootStackParamList = {
   HomeStack: undefined;
@@ -24,6 +25,7 @@ export type RootStackParamList = {
   SkillScreen: { link: string };
   SignIn:undefined;
   SignUp:undefined;
+  LogoScreen:undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -38,6 +40,7 @@ const ProfileName = "Profile";
 const settingsName = "Settings";
 const SkillScreenName = 'SkillScreen';
 const homeName1 = "Home1"
+const LogoScreenName = "LogoScreen"
 
 const HomeStack = () => (
   <Tab.Navigator
@@ -91,6 +94,7 @@ export default function Tabbar(){
       
         <NavigationContainer>
           <Stack.Navigator>
+            <Stack.Screen name={LogoScreenName} component={LogoScreen} options={{ headerShown: false}}/>
             <Stack.Screen name={SignInName} component={SignIn} options={{ headerShown: false}}/>
             <Stack.Screen name={SignUpName} component={SignUp} options={{ headerShown: false }}/>
             <Stack.Screen name={'HomeStack'} component={HomeStack} options={{ headerShown: false ,animation: 'none'}} />
