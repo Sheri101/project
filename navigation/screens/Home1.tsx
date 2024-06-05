@@ -24,6 +24,8 @@ type A2Item = {
   Message: string;
   image: any;
   link:string;
+  para:string
+  vidtitle:string
 };
 
 
@@ -44,10 +46,11 @@ const myArray: MyArrayItem[] = [
 ];
 
 const a2: A2Item[] = [
-  { key: 0, title: 'find determinant', time: '30 min', Message: 'hard',link:'rqZEWmWy1hQ', image: require('../../assets/ent2.jpg') },
-  { key: 1, title: 'bake a cake', time: '20 min', Message: 'easy',link:'rqZEWmWy1hQ', image: require('../../assets/cook.webp') },
-  { key: 2, title: 'dumbbell press', time: '13 min', Message: 'medium',link:'rqZEWmWy1hQ', image: require('../../assets/exer1.png') },
-  { key: 3, title: 'give cpr', time: '7 min', Message: 'easy',link:'rqZEWmWy1hQ', image: require('../../assets/hp1.jpg') },
+  { key: 0, title: 'find determinant', time: '30 min', Message: 'hard',link:'3ROzG6n4yMc',para:'A determinant is a real number associated with every square matrix.The determinant of a square matrix A is denoted by "det A" or | A |.Now, that last one looks like the absolute value of A, but you will have to apply context.If the vertical lines are around a matrix, it means determinant.'
+  ,vidtitle:"How to Find determinant:the easy way!", image: require('../../assets/determinant.png') },
+  { key: 1, title: 'bake a cake', time: '20 min', Message: 'easy',link:'rqZEWmWy1hQ', para:'hi',vidtitle:"",image: require('../../assets/cook.webp') },
+  { key: 2, title: 'dumbbell press', time: '13 min', Message: 'medium',link:'rqZEWmWy1hQ', para:'hi',vidtitle:"",image: require('../../assets/exer1.png') },
+  { key: 3, title: 'give cpr', time: '7 min', Message: 'easy',link:'rqZEWmWy1hQ', para:'hi',vidtitle:"",image: require('../../assets/hp1.jpg') },
 ];
 
 export default function Home1({ route }: { route: { params: { searchPhrase?: string } } }) {
@@ -71,8 +74,8 @@ export default function Home1({ route }: { route: { params: { searchPhrase?: str
     navigation.navigate('SectionDetail', { sectionName });
   };
 
-  const vidhandlePress = (link: string) => {
-    navigation.navigate('SkillScreen',{link});
+  const vidhandlePress = (link: string,para:string,vidtitle:string) => {
+    navigation.navigate('SkillScreen',{link,para,vidtitle});
   };
 
   const getTextColor = (message: string) => {
@@ -95,7 +98,7 @@ export default function Home1({ route }: { route: { params: { searchPhrase?: str
         data={a2}
         keyExtractor={item => item.key.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() =>vidhandlePress(item.link)} activeOpacity={0.7} style={styles.HListItems}>
+          <TouchableOpacity onPress={() =>vidhandlePress(item.link,item.para,item.vidtitle)} activeOpacity={0.7} style={styles.HListItems}>
             <ImageBackground style={styles.HImage} source={item.image} resizeMode="stretch">
               <View style={styles.overlay} />
               <Text style={styles.listTitleText}>{item.title}</Text>

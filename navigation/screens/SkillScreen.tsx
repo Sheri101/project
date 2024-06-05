@@ -10,7 +10,8 @@ type SkillScreenRouteProp = RouteProp<RootStackParamList, 'SkillScreen'>;
 
 export default function SkillScreen(){
     const route = useRoute<SkillScreenRouteProp>();
-    const { link } = route.params;
+    const { link,para,vidtitle } = route.params;
+    
     // const navigation = useNavigation();
     
 
@@ -23,7 +24,8 @@ export default function SkillScreen(){
                 videoId={link}
 
             />
-            <Text style={{color:'white'}}>hi</Text>
+            <Text style={styles.vidTitle}>{vidtitle}</Text>
+            <Text style={{color:'white'}}>{para}</Text>
             </View>
         </View>
     );
@@ -33,5 +35,11 @@ const styles = StyleSheet.create({
     container: {
     flex:1,
     backgroundColor:'black',
+    },
+    vidTitle:{
+    padding:6,
+    color:'white',
+    fontWeight: '900', 
+    fontSize: 25,
     },
 });

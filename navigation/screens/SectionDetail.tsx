@@ -42,8 +42,8 @@
             }
         };
         
-        const handlePress = (link: string) => {
-             navigation.navigate('SkillScreen',{link});
+        const handlePress = (link: string,para:string,vidtitle:string) => {
+             navigation.navigate('SkillScreen',{link,para,vidtitle});
         };
 
         return(
@@ -56,12 +56,12 @@
                             keyExtractor={item=>item.key.toString()}
                             // ListHeaderComponent={renderHeader}
                             renderItem={({item}) => ( 
-                                <TouchableOpacity onPress={() =>handlePress(item.link)} activeOpacity={0.7} style={styles.VListItems}>
+                                <TouchableOpacity onPress={() =>handlePress(item.link,item.para,item.vidtitle)} activeOpacity={0.7} style={styles.VListItems}>
                                 <ImageBackground style={styles.VImage} source={item.image} resizeMode="stretch">
                                 <View style={styles.overlay} />
                                     <Text style={styles.listTitleText}>{item.title}</Text>
                                     <View style={{flexDirection:'row'}}><Text style={styles.listInfoText}>{item.time} -</Text>
-                                        <Text style={[styles.listInfoText,{ color: getTextColor(item.Message), fontWeight:'bold',borderColor:getTextColor(item.Message), }]}>{item.Message}</Text>
+                                        <Text style={[styles.listInfoText,{ color: getTextColor(item.Message), fontWeight:'900',borderColor:getTextColor(item.Message), }]}>{item.Message}</Text>
                                     </View>                                
                                     </ImageBackground>
                                 </TouchableOpacity> 
@@ -112,13 +112,14 @@
         },
         listTitleText:{
             color:'white',
-            fontWeight: 'bold', 
+            fontWeight: '900', 
             fontSize: 27,
             paddingLeft:8,
         },
         listInfoText:{
             color:'white',
             paddingLeft:8,
+            fontWeight: '900', 
         },
         VListItems:{
             justifyContent:'center',
@@ -127,7 +128,7 @@
         },
         overlay: {
             ...StyleSheet.absoluteFillObject, // Overlay covers the entire ImageBackground
-            backgroundColor: 'rgba(0, 0, 0, 0.3)', // Semi-transparent black color
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black color
             borderRadius: 10,
         },
     });

@@ -29,7 +29,7 @@ export type RootStackParamList = {
   Home1:undefined;
   RecentSearch: { searchPhrase: string };
   SectionDetail: { sectionName: string };
-  SkillScreen: { link: string };
+  SkillScreen: { link: string,para:string,vidtitle:string };
   SignIn:undefined;
   SignUp:undefined;
   LogoScreen:undefined;
