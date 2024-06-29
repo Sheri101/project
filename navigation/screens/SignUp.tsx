@@ -66,7 +66,7 @@ export default function SignUp({ navigation }) {
     />
     {/* <Button color={'grey'} onPress={handleSignUp} title="Sign Up" /> */}
     <TouchableOpacity  style = {{borderRadius:20 , backgroundColor:'#00FFFF' , marginTop:60 , width:270 , marginLeft:28 }} onPress={handleSignUp} >
-                <Text style={{paddingLeft : 110 , fontSize:30  ,  color:'#212F3C' ,paddingLeft:78}}>SIGN UP</Text>
+                <Text style={{ fontSize:30  ,  color:'#212F3C' ,paddingLeft:78}}>SIGN UP</Text>
             </TouchableOpacity>
 </ImageBackground>
 

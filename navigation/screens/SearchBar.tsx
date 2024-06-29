@@ -2,13 +2,16 @@ import React,{useState,useEffect} from "react";
 import { StyleSheet, TextInput, View, Keyboard, Button,TouchableOpacity,Text } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList} from '../Tabbar';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 import { Feather, Entypo } from "@expo/vector-icons";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+type SearchBarNavigationProp = StackNavigationProp<RootStackParamList, 'SearchBar'>;
 
 const SearchBar = ({phrase,onSearch }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<SearchBarNavigationProp>();
   const [searchPhrase, setSearchPhrase] = useState(phrase);
   const clicked = true; 
 

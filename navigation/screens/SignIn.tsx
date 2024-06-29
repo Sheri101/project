@@ -99,12 +99,12 @@ export default function SignIn({ navigation }) {
                 onChangeText={setPassword}
             />
             {/* <Button style={{fontSize:17}} color={'darkgrey'} onPress={handleSignIn} title="Sign In" /> */}
-            <TouchableOpacity  style = {{ borderRadius:30,marginTop:10,backgroundColor:'#00FFFF' , width : 270, marginLeft:25 , marginTop:40}} onPress={handleSignIn} >
+            <TouchableOpacity  style = {{ borderRadius:30,backgroundColor:'#00FFFF' , width : 270, marginLeft:25 , marginTop:40}} onPress={handleSignIn} >
                 <Text style={{paddingLeft : 84, fontSize:30  ,  color:'#212F3C'}}>SIGN IN</Text>
                 
             </TouchableOpacity>
             <TouchableOpacity  style = {{borderRadius:30, backgroundColor:'#00FFFF' ,marginTop:10 , alignContent:'center',justifyContent:'center' ,width:270,marginLeft:27}} onPress={OnPressButtonCreateAccount} >
-            <Text style ={{color:'white' ,fontSize:30 , paddingLeft:30 , color:'#212F3C',  }} >Create Account</Text>
+            <Text style ={{fontSize:30 , paddingLeft:30 , color:'#212F3C',  }} >Create Account</Text>
             </TouchableOpacity>
         </ImageBackground>
     );

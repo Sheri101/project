@@ -10,6 +10,7 @@ import Profile from "./screens/Profile";
 import Home from "./screens/Home";
 import Home1 from "./screens/Home1";
 import Settings from "./screens/SettingsTest";
+import SearchBar from './screens/SearchBar';
 import RecentSearch from './screens/RecentSearch';
 import SectionDetail from './screens/SectionDetail';
 import SkillScreen from './screens/SkillScreen';
@@ -24,11 +25,13 @@ import TermsOfService from './screens/TermsOfService';
 import PrivacyPolicyScreen from './screens/PrivacypolicyScreen';
 import RulesAndRegulations from './screens/RulesandRegulationsScreen';
 
+
 export type RootStackParamList = {
   HomeStack: undefined;
-  Home1:undefined;
-  RecentSearch: { searchPhrase: string };
+  Home1:{searchPhrase: string};
+  RecentSearch: { searchPhrase?: string;term?:string };
   SectionDetail: { sectionName: string };
+  SearchBar:undefined;
   SkillScreen: { link: string,para:string,vidtitle:string };
   SignIn:undefined;
   SignUp:undefined;
